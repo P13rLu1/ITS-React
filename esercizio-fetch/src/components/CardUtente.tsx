@@ -7,7 +7,7 @@ interface Props {
 function CardUtente({nome, email, azienda}: Props) {
 
     return (
-        <div style={{border: "1px solid gray", borderRadius: 25, marginTop: 20, padding: 10}}>
+        <div style={{border: "1px solid gray", borderRadius: 25, marginTop: 20, padding: 10, backgroundColor: "#1a1a1a"}}>
             <h4>{nome}</h4>
             <i>{email}</i>
             <p>Azienda: {azienda}</p>

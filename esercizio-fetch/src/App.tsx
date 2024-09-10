@@ -25,6 +25,7 @@ function App() {
                     nome={utente.name}
                     email={utente.email}
                     azienda={utente.company.name}
+                    key={utente.id}
                 />
             ))}
         </>
