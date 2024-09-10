@@ -1,35 +1,43 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
+import {useEffect, useState} from "react";
+import ListaComponent from "./components/ListaComponent.tsx";
 
 function App() {
-  const [count, setCount] = useState(0)
 
-  return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    const [contatore, setContatore] = useState(0);
+
+    //useEffect con Array vuoto
+    //Il componente viene creato
+    // useEffect(() => {
+    //     // fetch data
+    //     console.log('Creato con il componente App')
+    // }, []);
+
+    //useEffect con Array vuoto
+    //Il componente viene distrutto
+    // useEffect(() => {
+    //     //....
+    //     return () => {
+    //         console.log('Distrutto il componente App')
+    //     }
+    // }, []);
+
+    //useEffect con dipendenza da contatore
+    // la funzione viene eseguita ogni volta che il contatore cambia
+    useEffect(() => {
+        console.log('Incrementa la variabile contatore')
+    }, [contatore]);
+
+    return (
+        <>
+            <h2>Esercitazione</h2>
+            <button onClick={() => setContatore(contatore + 1)}>
+                <p>Hai Cliccato {contatore} volte</p>
+            </button>
+            <hr/>
+            {(contatore %2 == 0) && <ListaComponent/>}
+        </>
+    )
 }
 
 export default App
