@@ -11,7 +11,7 @@ function App() {
     //const urlWithTimestamp = `${url}?timestamp=${new Date().getTime()}`; // funziona allo stesso modo di cache: "no-store", solo che questo è meno chiaro
 
     const getConsiglio = () => {
-        fetch(url , {cache: "no-store"}).then(response => response.json()).then(data => {
+        fetch(url , {cache: "reload"}).then(response => response.json()).then(data => {
             console.log(data);
             setConsiglio(data);
         });
