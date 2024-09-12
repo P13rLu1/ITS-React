@@ -35,7 +35,7 @@ function App() {
 
     return (
         <>
-            <h1>Pokédex</h1>
+            <h1>Pokédex Internazionale</h1>
 
             <div style={{display: 'flex'}}>
                 <div style={{
